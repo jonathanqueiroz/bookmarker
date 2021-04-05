@@ -5,8 +5,4 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-  def as_json(options)
-    super({ only: %i[id email created_at] }.merge(options))
-  end
 end

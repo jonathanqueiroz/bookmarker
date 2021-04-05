@@ -9,6 +9,10 @@ class Api::V1::UsersController < Api::V1::BaseController
     render json: @user.errors, status: :unprocessable_entity
   end
 
+  def index
+    render json: User.all, each_serializer: UserSerializer 
+  end
+
   private
 
   def user_params
