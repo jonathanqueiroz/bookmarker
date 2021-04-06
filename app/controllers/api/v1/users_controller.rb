@@ -1,16 +1,18 @@
 # frozen_string_literal: true
 
 class Api::V1::UsersController < Api::V1::BaseController
+  def index
+    render json: User.all, each_serializer: UserSerializer
+  end
+
   def create
     @user = User.new(user_params)
 
-    return render json: @user, status: :created if @user.save
+    if @user.save
+      return render_object(@user, :created)
+    end
 
-    render json: @user.errors, status: :unprocessable_entity
-  end
-
-  def index
-    render json: User.all, each_serializer: UserSerializer 
+    render_errors(@user.errors)
   end
 
   private
