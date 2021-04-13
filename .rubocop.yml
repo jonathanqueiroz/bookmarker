@@ -8,11 +8,19 @@ Metrics/MethodLength:
 
 Style/Documentation:
   Enabled: false
+
 Style/ClassAndModuleChildren:
   Enabled: false
+
 Style/IfUnlessModifier:
   Enabled: false
+
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
     - 'app/controllers/swagger/**/*'
+    - 'db/schema.rb'
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'bin/bundle'

@@ -24,10 +24,11 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'active_model_serializers', '~> 0.8.4'
 gem 'devise'
+gem 'doorkeeper', '5.4.0'
 gem 'rack-cors'
 gem 'swagger-blocks'
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+
+# Rails engine to introduce OAuth 2 provider functionality
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -2,11 +2,12 @@
 
 module Renderer
   def render_object(resource, **options)
-    options.merge!(json: resource, root: :data)
-    options.merge!(status: :ok) unless options.key?(:status)
-    options.merge!(meta: assign_metadata(resource))
-
-    render options
+    render({
+      json: resource,
+      root: 'data',
+      status: :ok,
+      meta: assign_metadata(resource)
+    }.merge(options))
   end
 
   def render_errors(errors, status = :unprocessable_entity)
