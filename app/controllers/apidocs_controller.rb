@@ -26,13 +26,15 @@ class ApidocsController < ActionController::Base
   # A list of all classes that have swagger_* declarations.
   SWAGGERED_CLASSES = [
     Swagger::Controllers::UsersController,
+    Swagger::Controllers::OauthTokenController,
     Swagger::Models::Error,
     Swagger::Models::Meta,
     Swagger::Models::User,
     Swagger::Models::UserInput,
-    Swagger::Controllers::OauthController,
     Swagger::Models::OauthTokenInput,
     Swagger::Models::OauthToken,
+    Swagger::Models::OauthTokenInfo,
+    Swagger::Models::Unauthorized,
     self
   ].freeze
 
